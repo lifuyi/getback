@@ -10,9 +10,15 @@ struct ServerListView: View {
             List {
                 if profileManager.profiles.isEmpty {
                     VStack(spacing: 16) {
+                        #if os(iOS)
                         Image(systemName: "server.rack")
                             .font(.system(size: 48))
                             .foregroundColor(.gray)
+                        #else
+                        Image("server.rack")
+                            .font(.system(size: 48))
+                            .foregroundColor(Color.gray)
+                        #endif
                         
                         Text("No Servers Configured")
                             .font(.headline)
@@ -24,7 +30,9 @@ struct ServerListView: View {
                             .multilineTextAlignment(.center)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    #if os(iOS)
                     .listRowSeparator(.hidden)
+                    #endif
                 } else {
                     ForEach(profileManager.profiles) { profile in
                         ServerRowView(profile: profile)
@@ -36,6 +44,7 @@ struct ServerListView: View {
                 }
             }
             .navigationTitle("Servers")
+            #if os(iOS)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { showingAddServer = true }) {
@@ -49,6 +58,7 @@ struct ServerListView: View {
                     }
                 }
             }
+            #endif
             .sheet(isPresented: $showingAddServer) {
                 AddServerView()
             }
@@ -163,11 +173,15 @@ struct AddServerView: View {
                 Section(header: Text("Server Information")) {
                     TextField("Server Name", text: $name)
                     TextField("Server Address", text: $serverAddress)
+                        #if os(iOS)
                         .textContentType(.URL)
                         .autocapitalization(.none)
+                        #endif
                     
                     TextField("Port", text: $port)
+                        #if os(iOS)
                         .keyboardType(.numberPad)
+                        #endif
                 }
                 
                 Section(header: Text("Authentication")) {
@@ -176,13 +190,16 @@ struct AddServerView: View {
                 
                 Section(header: Text("Advanced Settings")) {
                     TextField("SNI (Optional)", text: $sni)
+                        #if os(iOS)
                         .textContentType(.URL)
                         .autocapitalization(.none)
+                        #endif
                     
                     Toggle("Make Default Server", isOn: $makeDefault)
                 }
             }
             .navigationTitle("Add Server")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -199,10 +216,13 @@ struct AddServerView: View {
                 }
             }
             .alert("Error", isPresented: $showingAlert) {
-                Button("OK", role: .cancel) { }
+                Button("OK") {
+                    showingAlert = false
+                }
             } message: {
                 Text(alertMessage)
             }
+            #endif
         }
     }
     

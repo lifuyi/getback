@@ -2,8 +2,8 @@ import NetworkExtension
 import Foundation
 import Combine
 
-class TrojanVPNManager: ObservableObject {
-    static let shared = TrojanVPNManager()
+public class TrojanVPNManager: ObservableObject {
+    public static let shared = TrojanVPNManager()
     
     private var manager: NEVPNManager?
     private var statusObserver: NSObjectProtocol?
@@ -11,17 +11,17 @@ class TrojanVPNManager: ObservableObject {
     private var timer: Timer?
     private var reconnectTimer: Timer?
     
-    @Published var isConnected = false
-    @Published var isConnecting = false
-    @Published var connectionStatus = "Disconnected"
-    @Published var bytesUploaded: Int64 = 0
-    @Published var bytesDownloaded: Int64 = 0
-    @Published var connectedDuration: TimeInterval = 0
-    @Published var currentProfile: ServerProfile?
+    @Published public var isConnected = false
+    @Published public var isConnecting = false
+    @Published public var connectionStatus = "Disconnected"
+    @Published public var bytesUploaded: Int64 = 0
+    @Published public var bytesDownloaded: Int64 = 0
+    @Published public var connectedDuration: TimeInterval = 0
+    @Published public var currentProfile: ServerProfile?
     
     // Advanced features
-    var shouldAutoReconnect = true
-    var maxReconnectAttempts = 5
+    public var shouldAutoReconnect = true
+    public var maxReconnectAttempts = 5
     private var reconnectAttempts = 0
     private var lastDisconnectReason: NEProviderStopReason?
     
@@ -181,7 +181,7 @@ class TrojanVPNManager: ObservableObject {
         }
     }
     
-    func reconnect() {
+    public func reconnect() {
         guard let profile = currentProfile else { return }
         
         connect(with: profile) { [weak self] error in
@@ -192,7 +192,7 @@ class TrojanVPNManager: ObservableObject {
         }
     }
     
-    func cancelReconnection() {
+    public func cancelReconnection() {
         reconnectTimer?.invalidate()
         reconnectTimer = nil
         shouldAutoReconnect = false
@@ -200,7 +200,7 @@ class TrojanVPNManager: ObservableObject {
     }
     
     // MARK: - Enhanced VPN Setup
-    func setupVPN(serverAddress: String, port: Int, password: String, sni: String? = nil, completion: @escaping (Error?) -> Void) {
+    public func setupVPN(serverAddress: String, port: Int, password: String, sni: String? = nil, completion: @escaping (Error?) -> Void) {
         let profile = ServerProfile(
             name: "Quick Connect",
             serverAddress: serverAddress,
@@ -212,7 +212,7 @@ class TrojanVPNManager: ObservableObject {
         setupVPN(with: profile, completion: completion)
     }
     
-    func setupVPN(with profile: ServerProfile, completion: @escaping (Error?) -> Void) {
+    public func setupVPN(with profile: ServerProfile, completion: @escaping (Error?) -> Void) {
         NEVPNManager.shared().loadFromPreferences { [weak self] error in
             if let error = error {
                 completion(error)
@@ -224,7 +224,7 @@ class TrojanVPNManager: ObservableObject {
             // Configure packet tunnel
             let providerProtocol = NETunnelProviderProtocol()
             providerProtocol.providerBundleIdentifier = "com.yourcompany.trojanvpn.extension"
-            providerProtocol.serverAddress = serverAddress
+            providerProtocol.serverAddress = profile.serverAddress
             
             // Store configuration in providerConfiguration
             var config: [String: Any] = [
@@ -262,7 +262,7 @@ class TrojanVPNManager: ObservableObject {
         }
     }
     
-    func connect(with profile: ServerProfile, completion: @escaping (Error?) -> Void) {
+    public func connect(with profile: ServerProfile, completion: @escaping (Error?) -> Void) {
         setupVPN(with: profile) { [weak self] error in
             if let error = error {
                 completion(error)
@@ -273,7 +273,7 @@ class TrojanVPNManager: ObservableObject {
         }
     }
     
-    func connect(completion: @escaping (Error?) -> Void) {
+    public func connect(completion: @escaping (Error?) -> Void) {
         guard let manager = manager else {
             completion(NSError(domain: "TrojanVPN", code: -1, userInfo: [NSLocalizedDescriptionKey: "VPN not configured"]))
             return
@@ -287,7 +287,7 @@ class TrojanVPNManager: ObservableObject {
         }
     }
     
-    func disconnect(completion: @escaping (Error?) -> Void) {
+    public func disconnect(completion: @escaping (Error?) -> Void) {
         guard let manager = manager else {
             completion(NSError(domain: "TrojanVPN", code: -1, userInfo: [NSLocalizedDescriptionKey: "VPN not configured"]))
             return

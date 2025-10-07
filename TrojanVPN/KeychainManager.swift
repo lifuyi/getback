@@ -1,14 +1,14 @@
 import Foundation
 import Security
 
-class KeychainManager {
-    static let shared = KeychainManager()
+public class KeychainManager {
+    public static let shared = KeychainManager()
     
     private let service = "com.yourcompany.trojanvpn"
     
     private init() {}
     
-    func save(_ data: Data, for key: String) -> Bool {
+    public func save(_ data: Data, for key: String) -> Bool {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -24,7 +24,7 @@ class KeychainManager {
         return status == errSecSuccess
     }
     
-    func load(for key: String) -> Data? {
+    public func load(for key: String) -> Data? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -43,7 +43,7 @@ class KeychainManager {
         return nil
     }
     
-    func delete(for key: String) -> Bool {
+    public func delete(for key: String) -> Bool {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -56,12 +56,12 @@ class KeychainManager {
     
     // MARK: - Convenience methods for VPN configuration
     
-    func saveVPNConfig(_ config: VPNConfiguration) -> Bool {
+    public func saveVPNConfig(_ config: VPNConfiguration) -> Bool {
         guard let data = try? JSONEncoder().encode(config) else { return false }
         return save(data, for: "vpn_config")
     }
     
-    func loadVPNConfig() -> VPNConfiguration? {
+    public func loadVPNConfig() -> VPNConfiguration? {
         guard let data = load(for: "vpn_config"),
               let config = try? JSONDecoder().decode(VPNConfiguration.self, from: data) else {
             return nil
@@ -69,12 +69,12 @@ class KeychainManager {
         return config
     }
     
-    func savePassword(_ password: String) -> Bool {
+    public func savePassword(_ password: String) -> Bool {
         guard let data = password.data(using: .utf8) else { return false }
         return save(data, for: "trojan_password")
     }
     
-    func loadPassword() -> String? {
+    public func loadPassword() -> String? {
         guard let data = load(for: "trojan_password"),
               let password = String(data: data, encoding: .utf8) else {
             return nil
@@ -83,16 +83,9 @@ class KeychainManager {
     }
 }
 
-struct VPNConfiguration: Codable {
-    let serverAddress: String
-    let port: Int
-    let sni: String?
-    let created: Date
-    
-    init(serverAddress: String, port: Int, sni: String?) {
-        self.serverAddress = serverAddress
-        self.port = port
-        self.sni = sni
-        self.created = Date()
-    }
+public struct VPNConfiguration: Codable {
+    public let serverAddress: String
+    public let port: Int
+    public let password: String
+    public let sni: String?
 }

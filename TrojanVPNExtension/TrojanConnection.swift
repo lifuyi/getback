@@ -1,11 +1,9 @@
+#if os(iOS)
 import Foundation
 import Network
 import NetworkExtension
 import CryptoKit
-
-#if canImport(UIKit)
 import UIKit
-#endif
 
 protocol TrojanConnectionDelegate: AnyObject {
     func trojanConnection(_ connection: TrojanConnection, didReceivePacket packet: Data, protocolFamily: NSNumber)
@@ -441,3 +439,4 @@ class TrojanConnection {
         currentConnectionIndex = 0
     }
 }
+#endif

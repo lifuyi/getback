@@ -1,6 +1,8 @@
 import SwiftUI
+import TrojanVPNCore
 import AppKit
 
+@available(macOS 13.0, *)
 struct SidebarView: View {
     @StateObject private var serverManager = ServerProfileManager.shared
     @Binding var selectedProfile: ServerProfile?
@@ -130,6 +132,7 @@ struct SidebarView: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct ServerRowView_macOS: View {
     let profile: ServerProfile
     @StateObject private var serverManager = ServerProfileManager.shared
@@ -201,6 +204,7 @@ struct ServerRowView_macOS: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct ConnectionStatusDot: View {
     let profile: ServerProfile
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
@@ -225,6 +229,7 @@ struct ConnectionStatusDot: View {
     }
 }
 
+@available(macOS 13.0, *)
 #Preview {
     SidebarView(selectedProfile: .constant(nil))
         .frame(width: 250, height: 400)

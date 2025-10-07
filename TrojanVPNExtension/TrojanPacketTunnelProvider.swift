@@ -1,3 +1,4 @@
+#if os(iOS)
 import NetworkExtension
 import Foundation
 import Network
@@ -83,7 +84,7 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
         )
         
         trojanConnection?.delegate = self
-        trojanConnection?.connect { [weak self] error in
+        trojanConnection?.connect { [weak self] (error: Error?) in
             DispatchQueue.main.async {
                 if let error = error {
                     self?.pendingStartCompletion?(error)
@@ -123,3 +124,4 @@ extension TrojanPacketTunnelProvider: TrojanConnectionDelegate {
         }
     }
 }
+#endif

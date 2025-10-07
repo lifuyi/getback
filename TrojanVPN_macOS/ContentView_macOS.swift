@@ -1,6 +1,8 @@
 import SwiftUI
 import NetworkExtension
+import TrojanVPNCore
 
+@available(macOS 13.0, *)
 struct ContentView_macOS: View {
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
     @StateObject private var serverManager = ServerProfileManager.shared
@@ -134,6 +136,7 @@ struct HeaderView: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct ConnectionStatusView: View {
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
     @StateObject private var networkMonitor = NetworkMonitor_macOS.shared
@@ -224,6 +227,7 @@ struct StatusIndicator: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct ConnectionControlsView: View {
     let selectedProfile: ServerProfile?
     @Binding var showingAlert: Bool
@@ -287,6 +291,7 @@ struct ConnectionControlsView: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct StatisticsView: View {
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
     
@@ -324,6 +329,7 @@ struct StatisticsView: View {
     }
 }
 
+@available(macOS 13.0, *)
 #Preview {
     ContentView_macOS()
 }

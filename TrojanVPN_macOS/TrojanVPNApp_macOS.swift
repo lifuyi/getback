@@ -1,6 +1,7 @@
 import SwiftUI
 
 @main
+@available(macOS 13.0, *)
 struct TrojanVPNApp_macOS: App {
     var body: some Scene {
         WindowGroup {

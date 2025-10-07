@@ -1,19 +1,19 @@
 import Foundation
 import Combine
 
-struct ServerProfile: Codable, Identifiable, Hashable {
-    let id = UUID()
-    var name: String
-    var serverAddress: String
-    var port: Int
-    var password: String
-    var sni: String?
-    var isDefault: Bool
-    var createdDate: Date
-    var lastConnected: Date?
-    var isFavorite: Bool
+public struct ServerProfile: Codable, Identifiable, Hashable {
+    public let id = UUID()
+    public var name: String
+    public var serverAddress: String
+    public var port: Int
+    public var password: String
+    public var sni: String?
+    public var isDefault: Bool
+    public var createdDate: Date
+    public var lastConnected: Date?
+    public var isFavorite: Bool
     
-    init(name: String, serverAddress: String, port: Int = 443, password: String, sni: String? = nil, isDefault: Bool = false) {
+    public init(name: String, serverAddress: String, port: Int = 443, password: String, sni: String? = nil, isDefault: Bool = false) {
         self.name = name
         self.serverAddress = serverAddress
         self.port = port
@@ -29,11 +29,11 @@ struct ServerProfile: Codable, Identifiable, Hashable {
     }
 }
 
-class ServerProfileManager: ObservableObject {
-    static let shared = ServerProfileManager()
+public class ServerProfileManager: ObservableObject {
+    public static let shared = ServerProfileManager()
     
-    @Published var profiles: [ServerProfile] = []
-    @Published var selectedProfile: ServerProfile?
+    @Published public var profiles: [ServerProfile] = []
+    @Published public var selectedProfile: ServerProfile?
     
     private let keychainKey = "server_profiles"
     
@@ -41,7 +41,7 @@ class ServerProfileManager: ObservableObject {
         loadProfiles()
     }
     
-    func addProfile(_ profile: ServerProfile) {
+    public func addProfile(_ profile: ServerProfile) {
         var newProfile = profile
         
         // If this is the first profile, make it default
@@ -57,7 +57,7 @@ class ServerProfileManager: ObservableObject {
         }
     }
     
-    func updateProfile(_ profile: ServerProfile) {
+    public func updateProfile(_ profile: ServerProfile) {
         guard let index = profiles.firstIndex(where: { $0.id == profile.id }) else { return }
         
         profiles[index] = profile
@@ -68,7 +68,7 @@ class ServerProfileManager: ObservableObject {
         }
     }
     
-    func deleteProfile(_ profile: ServerProfile) {
+    public func deleteProfile(_ profile: ServerProfile) {
         profiles.removeAll { $0.id == profile.id }
         
         if selectedProfile?.id == profile.id {
@@ -78,7 +78,7 @@ class ServerProfileManager: ObservableObject {
         saveProfiles()
     }
     
-    func setDefaultProfile(_ profile: ServerProfile) {
+    public func setDefaultProfile(_ profile: ServerProfile) {
         // Remove default from all profiles
         for i in 0..<profiles.count {
             profiles[i].isDefault = false
@@ -93,19 +93,19 @@ class ServerProfileManager: ObservableObject {
         saveProfiles()
     }
     
-    func toggleFavorite(_ profile: ServerProfile) {
+    public func toggleFavorite(_ profile: ServerProfile) {
         guard let index = profiles.firstIndex(where: { $0.id == profile.id }) else { return }
         profiles[index].isFavorite.toggle()
         saveProfiles()
     }
     
-    func recordConnection(_ profile: ServerProfile) {
+    public func recordConnection(_ profile: ServerProfile) {
         guard let index = profiles.firstIndex(where: { $0.id == profile.id }) else { return }
         profiles[index].updateLastConnected()
         saveProfiles()
     }
     
-    func getRecentProfiles(limit: Int = 5) -> [ServerProfile] {
+    public func getRecentProfiles(limit: Int = 5) -> [ServerProfile] {
         return profiles
             .filter { $0.lastConnected != nil }
             .sorted { $0.lastConnected! > $1.lastConnected! }
@@ -113,7 +113,7 @@ class ServerProfileManager: ObservableObject {
             .map { $0 }
     }
     
-    func getFavoriteProfiles() -> [ServerProfile] {
+    public func getFavoriteProfiles() -> [ServerProfile] {
         return profiles.filter { $0.isFavorite }
     }
     
@@ -137,7 +137,7 @@ class ServerProfileManager: ObservableObject {
         }
     }
     
-    func exportProfiles() -> Data? {
+    public func exportProfiles() -> Data? {
         // Create export-safe version without passwords
         let exportProfiles = profiles.map { profile in
             ServerProfile(
@@ -153,7 +153,7 @@ class ServerProfileManager: ObservableObject {
         return try? JSONEncoder().encode(exportProfiles)
     }
     
-    func importProfiles(from data: Data) -> Bool {
+    public func importProfiles(from data: Data) -> Bool {
         do {
             let importedProfiles = try JSONDecoder().decode([ServerProfile].self, from: data)
             

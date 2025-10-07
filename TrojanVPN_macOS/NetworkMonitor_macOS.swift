@@ -2,6 +2,7 @@ import Foundation
 import Network
 import Combine
 import AppKit
+import TrojanVPNCore
 
 class NetworkMonitor_macOS: ObservableObject {
     static let shared = NetworkMonitor_macOS()

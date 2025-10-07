@@ -1,5 +1,7 @@
 import SwiftUI
+#if os(iOS)
 import NetworkExtension
+#endif
 
 struct ContentView: View {
     @StateObject private var vpnManager = TrojanVPNManager.shared
@@ -15,21 +17,32 @@ struct ContentView: View {
             Form {
                 Section(header: Text("Server Configuration")) {
                     TextField("Server Address", text: $serverAddress)
+                        #if os(iOS)
                         .textContentType(.URL)
+                        #endif
                     
                     TextField("Port", text: $port)
+                        #if os(iOS)
                         .keyboardType(.numberPad)
+                        #endif
                     
                     SecureField("Password", text: $password)
                     
                     TextField("SNI (Server Name Indication)", text: $sni)
+                        #if os(iOS)
                         .textContentType(.URL)
+                        #endif
                 }
                 
                 Section(header: Text("Connection")) {
                     HStack {
+                        #if os(iOS)
                         Image(systemName: vpnManager.isConnected ? "checkmark.circle.fill" : "xmark.circle.fill")
                             .foregroundColor(vpnManager.isConnected ? .green : .red)
+                        #else
+                        Image(vpnManager.isConnected ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .foregroundColor(vpnManager.isConnected ? Color.green : Color.red)
+                        #endif
                         
                         Text(vpnManager.connectionStatus)
                         
@@ -70,11 +83,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Trojan VPN")
+            #if os(iOS)
             .alert("VPN Status", isPresented: $showingAlert) {
-                Button("OK", role: .cancel) { }
+                Button("OK") {
+                    showingAlert = false
+                }
             } message: {
                 Text(alertMessage)
             }
+            #endif
         }
     }
     

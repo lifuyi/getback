@@ -1,17 +1,19 @@
 import Foundation
 import Network
+#if os(iOS)
 import NetworkExtension
+#endif
 
-class NetworkMonitor: ObservableObject {
-    static let shared = NetworkMonitor()
+public class NetworkMonitor: ObservableObject {
+    public static let shared = NetworkMonitor()
     
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "NetworkMonitor")
     
-    @Published var isConnected = false
-    @Published var connectionType: NWInterface.InterfaceType = .other
-    @Published var isExpensive = false
-    @Published var isConstrained = false
+    @Published public var isConnected = false
+    @Published public var connectionType: NWInterface.InterfaceType = .other
+    @Published public var isExpensive = false
+    @Published public var isConstrained = false
     
     private var autoReconnectEnabled = true
     private weak var vpnManager: TrojanVPNManager?
@@ -20,11 +22,11 @@ class NetworkMonitor: ObservableObject {
         startMonitoring()
     }
     
-    func setVPNManager(_ manager: TrojanVPNManager) {
+    public func setVPNManager(_ manager: TrojanVPNManager) {
         self.vpnManager = manager
     }
     
-    func enableAutoReconnect(_ enabled: Bool) {
+    public func enableAutoReconnect(_ enabled: Bool) {
         autoReconnectEnabled = enabled
     }
     
@@ -64,7 +66,7 @@ class NetworkMonitor: ObservableObject {
             object: nil,
             userInfo: [
                 "isConnected": isConnected,
-                "connectionType": connectionType.rawValue,
+                "connectionType": String(describing: connectionType),
                 "isExpensive": isExpensive,
                 "isConstrained": isConstrained
             ]

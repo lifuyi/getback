@@ -111,27 +111,31 @@ extension NEVPNStatus {
 
 // MARK: - View Extensions
 extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners))
-    }
-    
     func hideKeyboard() {
+        #if os(iOS)
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        #endif
     }
 }
 
 // MARK: - Custom Shapes
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
+    #if os(iOS)
     var corners: UIRectCorner = .allCorners
+    #endif
 
     func path(in rect: CGRect) -> Path {
+        #if os(iOS)
         let path = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,
             cornerRadii: CGSize(width: radius, height: radius)
         )
         return Path(path.cgPath)
+        #else
+        return Path(roundedRect: rect, cornerRadius: radius)
+        #endif
     }
 }
 
@@ -186,5 +190,9 @@ extension TimeInterval {
 }
 
 // MARK: - Import for C functions
+#if os(iOS)
+import UIKit
+#endif
+
 import CommonCrypto
 import Foundation

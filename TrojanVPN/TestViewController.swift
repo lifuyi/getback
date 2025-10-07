@@ -1,6 +1,5 @@
-#if canImport(UIKit)
+#if os(iOS)
 import UIKit
-#endif
 import SwiftUI
 
 // Example UIKit implementation for testing
@@ -282,3 +281,4 @@ struct TestViewControllerWrapper: UIViewControllerRepresentable {
         // No updates needed
     }
 }
+#endif

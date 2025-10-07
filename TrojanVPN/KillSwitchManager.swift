@@ -2,11 +2,11 @@ import Foundation
 import NetworkExtension
 import Network
 
-class KillSwitchManager: ObservableObject {
-    static let shared = KillSwitchManager()
+public class KillSwitchManager: ObservableObject {
+    public static let shared = KillSwitchManager()
     
-    @Published var isEnabled = false
-    @Published var isActive = false
+    @Published public var isEnabled = false
+    @Published public var isActive = false
     
     private var killSwitchConnection: NWConnection?
     private let queue = DispatchQueue(label: "KillSwitch")
@@ -15,7 +15,7 @@ class KillSwitchManager: ObservableObject {
         loadSettings()
     }
     
-    func enableKillSwitch(_ enabled: Bool) {
+    public func enableKillSwitch(_ enabled: Bool) {
         isEnabled = enabled
         saveSettings()
         
@@ -26,7 +26,7 @@ class KillSwitchManager: ObservableObject {
         }
     }
     
-    func activateKillSwitch() {
+    public func activateKillSwitch() {
         guard isEnabled else { return }
         
         // Block all traffic by creating a dummy connection that routes nowhere
@@ -54,7 +54,7 @@ class KillSwitchManager: ObservableObject {
         killSwitchConnection?.start(queue: queue)
     }
     
-    func deactivateKillSwitch() {
+    public func deactivateKillSwitch() {
         killSwitchConnection?.cancel()
         killSwitchConnection = nil
         
@@ -64,7 +64,7 @@ class KillSwitchManager: ObservableObject {
         }
     }
     
-    func handleVPNStatusChange(_ status: NEVPNStatus) {
+    public func handleVPNStatusChange(_ status: NEVPNStatus) {
         guard isEnabled else { return }
         
         switch status {
@@ -92,7 +92,7 @@ class KillSwitchManager: ObservableObject {
 // MARK: - Network Interface Management
 extension KillSwitchManager {
     
-    func blockAllTrafficExceptVPN() {
+    public func blockAllTrafficExceptVPN() {
         // This would require more advanced implementation using Network Extension
         // For a complete kill switch, you'd need to:
         // 1. Configure system routing tables
@@ -103,7 +103,7 @@ extension KillSwitchManager {
         // In a production app, you'd implement this in the packet tunnel extension
     }
     
-    func getAllowedApplications() -> [String] {
+    public func getAllowedApplications() -> [String] {
         // Return list of applications that should bypass kill switch
         return [
             "com.apple.mobilephone", // Phone app
@@ -112,7 +112,7 @@ extension KillSwitchManager {
         ]
     }
     
-    func isApplicationAllowed(_ bundleIdentifier: String) -> Bool {
+    public func isApplicationAllowed(_ bundleIdentifier: String) -> Bool {
         return getAllowedApplications().contains(bundleIdentifier)
     }
 }
@@ -120,13 +120,13 @@ extension KillSwitchManager {
 // MARK: - Split Tunneling Support
 extension KillSwitchManager {
     
-    struct SplitTunnelRule {
-        let bundleIdentifier: String
-        let shouldBypassVPN: Bool
-        let name: String
+    public struct SplitTunnelRule {
+        public let bundleIdentifier: String
+        public let shouldBypassVPN: Bool
+        public let name: String
     }
     
-    func getSplitTunnelRules() -> [SplitTunnelRule] {
+    public func getSplitTunnelRules() -> [SplitTunnelRule] {
         // Return configured split tunnel rules
         // This would be stored in user preferences
         return [
@@ -143,7 +143,7 @@ extension KillSwitchManager {
         ]
     }
     
-    func shouldApplicationBypassVPN(_ bundleIdentifier: String) -> Bool {
+    public func shouldApplicationBypassVPN(_ bundleIdentifier: String) -> Bool {
         return getSplitTunnelRules()
             .first { $0.bundleIdentifier == bundleIdentifier }?
             .shouldBypassVPN ?? false

@@ -1,5 +1,7 @@
 import SwiftUI
+import TrojanVPNCore
 
+@available(macOS 13.0, *)
 struct ServerConfigView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var serverManager = ServerProfileManager.shared
@@ -170,6 +172,7 @@ struct ServerConfigView: View {
     }
 }
 
+@available(macOS 13.0, *)
 struct SettingsView: View {
     @StateObject private var killSwitchManager = KillSwitchManager.shared
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
@@ -272,6 +275,7 @@ struct SettingsView: View {
     }
 }
 
+@available(macOS 13.0, *)
 #Preview {
     ServerConfigView()
 }

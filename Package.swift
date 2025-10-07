@@ -34,7 +34,6 @@ let package = Package(
             dependencies: [],
             path: "TrojanVPN",
             sources: [
-                "TrojanVPNApp.swift",
                 "ContentView.swift", 
                 "TrojanVPNManager.swift",
                 "KeychainManager.swift",
