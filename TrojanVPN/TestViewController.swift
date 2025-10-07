@@ -1,4 +1,6 @@
+#if canImport(UIKit)
 import UIKit
+#endif
 import SwiftUI
 
 // Example UIKit implementation for testing

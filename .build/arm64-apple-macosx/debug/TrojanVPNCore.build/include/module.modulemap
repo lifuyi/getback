@@ -1,0 +1,3 @@
+module TrojanVPNCore {
+    header "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/include/TrojanVPNCore-Swift.h"
+}

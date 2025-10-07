@@ -1,5 +1,6 @@
 import NetworkExtension
 import Foundation
+import Network
 
 class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
     
@@ -51,7 +52,8 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
                 serverAddress: serverAddress,
                 port: port,
                 password: password,
-                sni: sni
+                sni: sni,
+                config: config
             )
         }
     }
@@ -70,7 +72,7 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
         completionHandler?(nil)
     }
     
-    private func startTrojanConnection(serverAddress: String, port: Int, password: String, sni: String?) {
+    private func startTrojanConnection(serverAddress: String, port: Int, password: String, sni: String?, config: [String: Any]) {
         trojanConnection = TrojanConnection(
             serverAddress: serverAddress,
             port: port,

@@ -62,10 +62,10 @@ extension String {
     
     func sha256() -> String {
         let data = self.data(using: .utf8) ?? Data()
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+        var hash = [UInt8](repeating: 0, count: 32) // SHA256 produces 32 bytes
         
-        data.withUnsafeBytes {
-            _ = CC_SHA256($0.baseAddress, CC_LONG(data.count), &hash)
+        data.withUnsafeBytes { bytes in
+            let _ = CC_SHA256(bytes.baseAddress, CC_LONG(data.count), &hash)
         }
         
         return hash.map { String(format: "%02x", $0) }.joined()
@@ -187,3 +187,4 @@ extension TimeInterval {
 
 // MARK: - Import for C functions
 import CommonCrypto
+import Foundation

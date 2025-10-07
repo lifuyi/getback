@@ -3,6 +3,10 @@ import Network
 import NetworkExtension
 import CryptoKit
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 protocol TrojanConnectionDelegate: AnyObject {
     func trojanConnection(_ connection: TrojanConnection, didReceivePacket packet: Data, protocolFamily: NSNumber)
     func trojanConnection(_ connection: TrojanConnection, didDisconnectWithError error: Error?)
@@ -65,7 +69,7 @@ class TrojanConnection {
         }
         
         // Enable TLS 1.3 for better performance
-        sec_protocol_options_set_min_tls_protocol_version(tlsOptions.securityProtocolOptions, .TLSv13)
+        sec_protocol_options_set_min_tls_protocol_version(tlsOptions.securityProtocolOptions, tls_protocol_version_t(rawValue: 1)!)
         
         // Create TCP options
         let tcpOptions = NWProtocolTCP.Options()

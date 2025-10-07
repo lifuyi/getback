@@ -27,7 +27,7 @@ struct PacketParser {
         let totalLength = Int(data[2]) << 8 | Int(data[3])
         guard data.count >= totalLength else { return nil }
         
-        let protocol = data[9]
+        let protocolType = data[9]
         let sourceIP = data.subdata(in: 12..<16)
         let destinationIP = data.subdata(in: 16..<20)
         
@@ -35,7 +35,7 @@ struct PacketParser {
         
         return IPPacket(
             version: 4,
-            protocol: protocol,
+            protocolType: protocolType,
             sourceAddress: sourceIP,
             destinationAddress: destinationIP,
             payload: payload,
@@ -58,7 +58,7 @@ struct PacketParser {
         
         return IPPacket(
             version: 6,
-            protocol: nextHeader,
+            protocolType: nextHeader,
             sourceAddress: sourceIP,
             destinationAddress: destinationIP,
             payload: payload,
@@ -118,7 +118,7 @@ struct PacketParser {
 
 struct IPPacket {
     let version: UInt8
-    let protocol: UInt8
+    let protocolType: UInt8
     let sourceAddress: Data
     let destinationAddress: Data
     let payload: Data
@@ -126,9 +126,9 @@ struct IPPacket {
     
     var isIPv4: Bool { version == 4 }
     var isIPv6: Bool { version == 6 }
-    var isTCP: Bool { protocol == 6 }
-    var isUDP: Bool { protocol == 17 }
-    var isICMP: Bool { protocol == 1 || protocol == 58 } // ICMPv4 or ICMPv6
+    var isTCP: Bool { protocolType == 6 }
+    var isUDP: Bool { protocolType == 17 }
+    var isICMP: Bool { protocolType == 1 || protocolType == 58 } // ICMPv4 or ICMPv6
 }
 
 struct TCPHeader {
