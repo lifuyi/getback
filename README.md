@@ -1,9 +1,15 @@
-# Trojan VPN iOS Client
+# Trojan VPN Cross-Platform Client
 
-A complete iOS implementation of a Trojan protocol VPN client that disguises VPN traffic as HTTPS traffic to bypass censorship.
+A complete cross-platform implementation of a Trojan protocol VPN client supporting both **iOS** and **macOS**. The app disguises VPN traffic as HTTPS traffic to bypass censorship and follows proper **MVC architecture** where both platforms share the same Models and Controllers, but have platform-optimized Views.
 
 ## Features
 
+### Cross-Platform Support
+- **iOS App**: Native iOS interface optimized for mobile devices
+- **macOS App**: Native macOS interface with sidebar navigation and desktop UI patterns
+- **Shared Core**: Models and Controllers shared between platforms for consistency
+
+### VPN Functionality
 - **Trojan Protocol Implementation**: Full support for Trojan protocol with TLS encryption
 - **Network Extension**: Packet Tunnel Provider for system-wide VPN functionality  
 - **SwiftUI Interface**: Modern, intuitive user interface
@@ -14,18 +20,21 @@ A complete iOS implementation of a Trojan protocol VPN client that disguises VPN
 ## Architecture
 
 ```
-Main App (TrojanVPN)
-├── UI Layer (SwiftUI)
-├── VPN Manager
-├── Keychain Manager
-└── Configuration Storage
-
-Packet Tunnel Extension (TrojanVPNExtension)  
-├── Packet Tunnel Provider
-├── Trojan Connection Handler
-├── Protocol Implementation
-└── Packet Parser
+📦 TrojanVPN
+├── 📊 TrojanVPNModels            # Pure data models (Foundation layer)
+├── 🎮 TrojanVPNCore              # Controllers + Utilities (Business logic)
+├── 📱 TrojanVPNiOS               # iOS-specific Views
+├── 💻 TrojanVPNmacOS             # macOS-specific Views
+└── 🔌 TrojanVPNExtension         # Network Extension (Shared)
 ```
+
+**Benefits:**
+- ✅ **Code Reusability**: Business logic shared between iOS and macOS
+- ✅ **Platform Optimization**: UI optimized for each platform's guidelines  
+- ✅ **Maintainability**: Clear separation of concerns
+- ✅ **Scalability**: Easy to add new platforms or features
+
+For detailed architecture documentation, see [MVC_ARCHITECTURE.md](MVC_ARCHITECTURE.md).
 
 ## Requirements
 

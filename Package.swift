@@ -8,17 +8,30 @@ let package = Package(
         .macOS(.v11)
     ],
     products: [
+        // Models library - Foundation data models (most reusable)
+        .library(
+            name: "TrojanVPNModels",
+            targets: ["TrojanVPNModels"]
+        ),
+        // Core library with Controllers (shared between iOS and macOS)
         .library(
             name: "TrojanVPNCore",
             targets: ["TrojanVPNCore"]
         ),
+        // Network Extension library (shared between iOS and macOS)
         .library(
             name: "TrojanVPNExtension", 
             targets: ["TrojanVPNExtension"]
         ),
+        // iOS specific Views
         .library(
-            name: "TrojanVPN_macOS",
-            targets: ["TrojanVPN_macOS"]
+            name: "TrojanVPNiOS",
+            targets: ["TrojanVPNiOS"]
+        ),
+        // macOS specific Views
+        .library(
+            name: "TrojanVPNmacOS",
+            targets: ["TrojanVPNmacOS"]
         ),
         .executable(
             name: "TrojanVPNDemo",
@@ -29,55 +42,56 @@ let package = Package(
         // No external dependencies for now to keep it simple
     ],
     targets: [
+        // MARK: - Models (Data Layer) - Most foundational, no dependencies
+        .target(
+            name: "TrojanVPNModels",
+            dependencies: [],
+            path: "Sources/TrojanVPNModels"
+        ),
+        
+        // MARK: - Core (Controllers + Utilities) - Depends on Models
         .target(
             name: "TrojanVPNCore",
-            dependencies: [],
-            path: "TrojanVPN",
+            dependencies: ["TrojanVPNModels"],
+            path: "Sources/TrojanVPNCore",
             sources: [
-                "ContentView.swift", 
-                "TrojanVPNManager.swift",
-                "KeychainManager.swift",
-                "Constants.swift",
-                "Extensions.swift",
-                "NetworkMonitor.swift",
-                "ServerProfileManager.swift",
-                "KillSwitchManager.swift",
-                "ServerListView.swift",
-                "TestViewController.swift"
+                "Controllers/",
+                "Utilities/"
             ]
         ),
+        
+        // MARK: - Network Extension - Shared between iOS and macOS
         .target(
             name: "TrojanVPNExtension",
-            dependencies: [],
-            path: "TrojanVPNExtension", 
-            sources: [
-                "TrojanPacketTunnelProvider.swift",
-                "TrojanConnection.swift",
-                "TrojanProtocol.swift",
-                "PacketParser.swift"
-            ]
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore"],
+            path: "Sources/TrojanVPNExtension"
         ),
+        
+        // MARK: - iOS Views
         .target(
-            name: "TrojanVPN_macOS",
-            dependencies: ["TrojanVPNCore"],
-            path: "TrojanVPN_macOS",
-            sources: [
-                "TrojanVPNApp_macOS.swift",
-                "ContentView_macOS.swift",
-                "SidebarView.swift",
-                "ServerConfigView.swift",
-                "TrojanVPNManager_macOS.swift",
-                "NetworkMonitor_macOS.swift"
-            ]
+            name: "TrojanVPNiOS",
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore"],
+            path: "Sources/TrojanVPNiOS"
         ),
+        
+        // MARK: - macOS Views  
+        .target(
+            name: "TrojanVPNmacOS",
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore"],
+            path: "Sources/TrojanVPNmacOS"
+        ),
+        
+        // MARK: - Demo App
         .executableTarget(
             name: "TrojanVPNDemo",
-            dependencies: ["TrojanVPNCore", "TrojanVPN_macOS"],
-            path: "Demo"
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore", "TrojanVPNiOS"],
+            path: "Sources/TrojanVPNDemo"
         ),
+        
+        // MARK: - Tests
         .testTarget(
             name: "TrojanVPNTests",
-            dependencies: ["TrojanVPNCore"]
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore"]
         ),
     ]
 )
