@@ -104,9 +104,12 @@ public class ServerProfileManager: ObservableObject {
     private func saveProfiles() {
         do {
             let data = try JSONEncoder().encode(profiles)
-            KeychainManager.shared.save(data, for: keychainKey)
+            let success = KeychainManager.shared.save(data, for: keychainKey)
+            if !success {
+                print("Failed to save profiles to keychain")
+            }
         } catch {
-            print("Failed to save profiles: \(error)")
+            print("Failed to encode profiles: \(error)")
         }
     }
     

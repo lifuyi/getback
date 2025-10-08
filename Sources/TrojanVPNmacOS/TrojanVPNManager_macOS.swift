@@ -3,6 +3,7 @@ import Foundation
 import Combine
 import Network
 import AppKit
+import TrojanVPNModels
 import TrojanVPNCore
 
 class TrojanVPNManager_macOS: ObservableObject {

@@ -1,4 +1,5 @@
 import SwiftUI
+import TrojanVPNModels
 import TrojanVPNCore
 
 @available(macOS 13.0, *)

@@ -91,7 +91,8 @@ let package = Package(
         // MARK: - Tests
         .testTarget(
             name: "TrojanVPNTests",
-            dependencies: ["TrojanVPNModels", "TrojanVPNCore"]
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore"],
+            path: "Tests/TrojanVPNTests"
         ),
     ]
 )

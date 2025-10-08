@@ -1,6 +1,7 @@
-import NetworkExtension
 import Foundation
 import Combine
+import NetworkExtension
+import TrojanVPNModels
 
 public class TrojanVPNManager: ObservableObject {
     public static let shared = TrojanVPNManager()

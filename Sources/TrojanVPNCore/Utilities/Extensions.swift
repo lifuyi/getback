@@ -143,7 +143,7 @@ struct RoundedCorner: Shape {
 extension UserDefaults {
     func setSecure<T: Codable>(_ object: T, forKey key: String) {
         guard let data = try? JSONEncoder().encode(object) else { return }
-        KeychainManager.shared.save(data, for: key)
+        let _ = KeychainManager.shared.save(data, for: key)
     }
     
     func getSecure<T: Codable>(_ type: T.Type, forKey key: String) -> T? {
@@ -157,7 +157,7 @@ extension UserDefaults {
 
 // MARK: - Date Extensions
 extension Date {
-    func timeAgoDisplay() -> String {
+    public func timeAgoDisplay() -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .abbreviated
         return formatter.localizedString(for: self, relativeTo: Date())

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
+import TrojanVPNModels
 import TrojanVPNCore
-import TrojanVPN_macOS
 
 print("🔧 Trojan VPN Demo - macOS Version")
 print("================================")

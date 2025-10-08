@@ -5,7 +5,7 @@ import Foundation
 /// This model contains only data and basic data manipulation methods
 /// No business logic or external dependencies
 public struct ServerProfile: Codable, Identifiable, Hashable {
-    public let id = UUID()
+    public var id = UUID()
     public var name: String
     public var serverAddress: String
     public var port: Int

@@ -1,4 +1,6 @@
 import SwiftUI
+import TrojanVPNModels
+import TrojanVPNCore
 #if os(iOS)
 import NetworkExtension
 #endif

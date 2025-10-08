@@ -1,4 +1,6 @@
 import SwiftUI
+import TrojanVPNModels
+import TrojanVPNCore
 
 struct ServerListView: View {
     @StateObject private var profileManager = ServerProfileManager.shared

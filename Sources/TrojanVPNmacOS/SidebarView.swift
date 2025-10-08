@@ -1,6 +1,7 @@
 import SwiftUI
-import TrojanVPNCore
 import AppKit
+import TrojanVPNModels
+import TrojanVPNCore
 
 @available(macOS 13.0, *)
 struct SidebarView: View {
