@@ -37,6 +37,10 @@ let package = Package(
             name: "TrojanVPNDemo",
             targets: ["TrojanVPNDemo"]
         ),
+        .executable(
+            name: "TrojanVPNMacOSApp",
+            targets: ["TrojanVPNMacOSApp"]
+        ),
     ],
     dependencies: [
         // No external dependencies for now to keep it simple
@@ -86,6 +90,13 @@ let package = Package(
             name: "TrojanVPNDemo",
             dependencies: ["TrojanVPNModels", "TrojanVPNCore", "TrojanVPNiOS"],
             path: "Sources/TrojanVPNDemo"
+        ),
+        
+        // MARK: - macOS App
+        .executableTarget(
+            name: "TrojanVPNMacOSApp",
+            dependencies: ["TrojanVPNModels", "TrojanVPNCore", "TrojanVPNmacOS"],
+            path: "Sources/TrojanVPNMacOSApp"
         ),
         
         // MARK: - Tests

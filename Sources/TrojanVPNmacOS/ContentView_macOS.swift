@@ -4,7 +4,8 @@ import TrojanVPNModels
 import TrojanVPNCore
 
 @available(macOS 13.0, *)
-struct ContentView_macOS: View {
+public struct ContentView_macOS: View {
+    public init() {}
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
     @StateObject private var serverManager = ServerProfileManager.shared
     @State private var selectedProfile: ServerProfile?
@@ -12,7 +13,7 @@ struct ContentView_macOS: View {
     @State private var showingAlert = false
     @State private var alertMessage = ""
     
-    var body: some View {
+    public var body: some View {
         NavigationSplitView {
             // Sidebar - Server List
             SidebarView(selectedProfile: $selectedProfile)
