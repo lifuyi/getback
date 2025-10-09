@@ -44,38 +44,52 @@ struct ServerConfigView: View {
             Divider()
             
             // Form
-            Form {
-                Section("Server Information") {
-                    TextField("Server Name", text: $name)
-                        .textFieldStyle(.roundedBorder)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    GroupBox("Server Information") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            TextField("Server Name", text: $name)
+                                .textFieldStyle(.roundedBorder)
+                            
+                            TextField("Server Address", text: $serverAddress)
+                                .textFieldStyle(.roundedBorder)
+                                .autocorrectionDisabled()
+                            
+                            HStack {
+                                TextField("Port", text: $port)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(maxWidth: 100)
+                                
+                                Spacer()
+                            }
+                        }
+                        .padding()
+                    }
                     
-                    TextField("Server Address", text: $serverAddress)
-                        .textFieldStyle(.roundedBorder)
-                        .autocorrectionDisabled()
+                    GroupBox("Authentication") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            SecureField("Password", text: $password)
+                                .textFieldStyle(.roundedBorder)
+                        }
+                        .padding()
+                    }
                     
-                    TextField("Port", text: $port)
-                        .textFieldStyle(.roundedBorder)
-                        .frame(maxWidth: 100)
-                }
-                
-                Section("Authentication") {
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(.roundedBorder)
-                }
-                
-                Section("Advanced Settings") {
-                    TextField("SNI (Optional)", text: $sni)
-                        .textFieldStyle(.roundedBorder)
-                        .autocorrectionDisabled()
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Toggle("Set as default server", isOn: $makeDefault)
-                        Toggle("Add to favorites", isOn: $makeFavorite)
+                    GroupBox("Advanced Settings") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            TextField("SNI (Optional)", text: $sni)
+                                .textFieldStyle(.roundedBorder)
+                                .autocorrectionDisabled()
+                            
+                            VStack(alignment: .leading, spacing: 8) {
+                                Toggle("Set as default server", isOn: $makeDefault)
+                                Toggle("Add to favorites", isOn: $makeFavorite)
+                            }
+                        }
+                        .padding()
                     }
                 }
+                .padding()
             }
-            .formStyle(.grouped)
-            .padding()
             
             Spacer()
             
