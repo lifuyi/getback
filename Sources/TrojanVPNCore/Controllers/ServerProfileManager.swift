@@ -114,14 +114,41 @@ public class ServerProfileManager: ObservableObject {
     }
     
     private func loadProfiles() {
-        guard let data = KeychainManager.shared.load(for: keychainKey) else { return }
+        guard let data = KeychainManager.shared.load(for: keychainKey) else {
+            // No existing profiles, add default server
+            addDefaultServer()
+            return
+        }
         
         do {
             profiles = try JSONDecoder().decode([ServerProfile].self, from: data)
             selectedProfile = getDefaultProfile() ?? profiles.first
+            
+            // If no profiles exist after loading, add default server
+            if profiles.isEmpty {
+                addDefaultServer()
+            }
         } catch {
             print("Failed to load profiles: \(error)")
+            // On error, add default server
+            addDefaultServer()
         }
+    }
+    
+    private func addDefaultServer() {
+        let defaultServer = ServerProfile(
+            name: "China VPN",
+            serverAddress: "chinida.space",
+            port: 443,
+            password: "fuyilee",
+            isDefault: true
+        )
+        
+        profiles = [defaultServer]
+        selectedProfile = defaultServer
+        saveProfiles()
+        
+        print("Added default server: chinida.space:443")
     }
     
     // MARK: - Import/Export

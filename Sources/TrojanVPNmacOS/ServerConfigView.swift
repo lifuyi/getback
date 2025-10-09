@@ -17,6 +17,11 @@ struct ServerConfigView: View {
     
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @FocusState private var focusedField: Field?
+    
+    enum Field: Hashable {
+        case name, serverAddress, port, password, sni
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -50,15 +55,21 @@ struct ServerConfigView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             TextField("Server Name", text: $name)
                                 .textFieldStyle(.roundedBorder)
+                                .focused($focusedField, equals: .name)
+                                .onSubmit { focusedField = .serverAddress }
                             
                             TextField("Server Address", text: $serverAddress)
                                 .textFieldStyle(.roundedBorder)
                                 .autocorrectionDisabled()
+                                .focused($focusedField, equals: .serverAddress)
+                                .onSubmit { focusedField = .port }
                             
                             HStack {
                                 TextField("Port", text: $port)
                                     .textFieldStyle(.roundedBorder)
                                     .frame(maxWidth: 100)
+                                    .focused($focusedField, equals: .port)
+                                    .onSubmit { focusedField = .password }
                                 
                                 Spacer()
                             }
@@ -70,6 +81,8 @@ struct ServerConfigView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             SecureField("Password", text: $password)
                                 .textFieldStyle(.roundedBorder)
+                                .focused($focusedField, equals: .password)
+                                .onSubmit { focusedField = .sni }
                         }
                         .padding()
                     }
@@ -79,6 +92,7 @@ struct ServerConfigView: View {
                             TextField("SNI (Optional)", text: $sni)
                                 .textFieldStyle(.roundedBorder)
                                 .autocorrectionDisabled()
+                                .focused($focusedField, equals: .sni)
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 Toggle("Set as default server", isOn: $makeDefault)
@@ -120,6 +134,12 @@ struct ServerConfigView: View {
             Button("OK", role: .cancel) { }
         } message: {
             Text(alertMessage)
+        }
+        .onAppear {
+            // Set initial focus to the first field
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                focusedField = .name
+            }
         }
     }
     
