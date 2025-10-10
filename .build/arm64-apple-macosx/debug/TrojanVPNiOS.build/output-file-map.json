@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/master.swiftdeps"
+  },
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ContentView.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.dia"
+  },
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ServerListView.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.dia"
+  },
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TestViewController.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.dia"
+  },
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TrojanVPNApp.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.dia"
+  }
+}

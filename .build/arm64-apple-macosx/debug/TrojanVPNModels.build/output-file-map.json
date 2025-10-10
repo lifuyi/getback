@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/master.swiftdeps"
+  },
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNModels/ServerProfile.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.dia"
+  }
+}

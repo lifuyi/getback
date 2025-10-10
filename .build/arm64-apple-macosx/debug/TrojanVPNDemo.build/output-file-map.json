@@ -2,7 +2,7 @@
   "": {
     "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build/master.swiftdeps"
   },
-  "/Users/eyeopen/Downloads/getback/Demo/main.swift": {
+  "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNDemo/main.swift": {
     "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build/main.d",
     "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build/main.swift.o",
     "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build/main~partial.swiftmodule",

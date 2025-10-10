@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/master.swiftdeps"
+  },
+  "/Users/eyeopen/Downloads/getback/Tests/TrojanVPNTests/TrojanVPNTests.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.dia"
+  }
+}

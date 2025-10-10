@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/master.swiftdeps"
+  },
+  "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.d",
+    "object": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.dia"
+  }
+}

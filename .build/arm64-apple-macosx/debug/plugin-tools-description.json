@@ -1,6 +1,10 @@
 {
   "builtTestProducts" : [
-
+    {
+      "binaryPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.xctest/Contents/MacOS/TrojanVPNPackageTests",
+      "packagePath" : "/Users/eyeopen/Downloads/getback",
+      "productName" : "TrojanVPNPackageTests"
+    }
   ],
   "copyCommands" : {
 
@@ -24,51 +28,39 @@
       "inputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/Constants.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/KillSwitchManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ContentView.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/NetworkMonitor.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/Extensions.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/ServerProfileManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/KeychainManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/TrojanVPNManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/KillSwitchManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Constants.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/NetworkMonitor.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Extensions.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerListView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerProfileManager.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TestViewController.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNApp.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/KeychainManager.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
         },
         {
           "kind" : "file",
@@ -79,17 +71,13 @@
       "moduleName" : "TrojanVPNCore",
       "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule",
       "objects" : [
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ContentView.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Extensions.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KeychainManager.swift.o",
         "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KillSwitchManager.swift.o",
         "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/NetworkMonitor.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerListView.swift.o",
         "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TestViewController.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNApp.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o"
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Extensions.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KeychainManager.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -150,11 +138,23 @@
       "outputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KillSwitchManager.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ContentView.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/NetworkMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o"
         },
         {
           "kind" : "file",
@@ -166,50 +166,18 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KillSwitchManager.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/NetworkMonitor.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerListView.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TestViewController.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNApp.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o"
-        },
-        {
-          "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/Constants.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/ContentView.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/Extensions.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/KeychainManager.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/KillSwitchManager.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/NetworkMonitor.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerListView.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerProfileManager.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/TestViewController.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNApp.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNManager.swift"
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/KillSwitchManager.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/NetworkMonitor.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/ServerProfileManager.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/TrojanVPNManager.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Constants.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Extensions.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/KeychainManager.swift"
       ],
       "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build",
       "wholeModuleOptimization" : false
@@ -221,7 +189,7 @@
       "inputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/Demo/main.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNDemo/main.swift"
         },
         {
           "kind" : "file",
@@ -229,11 +197,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPN_macOS.swiftmodule"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNiOS.swiftmodule"
         },
         {
           "kind" : "file",
@@ -314,7 +286,7 @@
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/eyeopen/Downloads/getback/Demo/main.swift"
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNDemo/main.swift"
       ],
       "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build",
       "wholeModuleOptimization" : false
@@ -326,23 +298,31 @@
       "inputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/PacketParser.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/PacketParser.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanConnection.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanConnection.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanPacketTunnelProvider.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanPacketTunnelProvider.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanProtocol.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanProtocol.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
         },
         {
           "kind" : "file",
@@ -438,42 +418,22 @@
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/PacketParser.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanConnection.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanPacketTunnelProvider.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanProtocol.swift"
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/PacketParser.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanConnection.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanPacketTunnelProvider.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanProtocol.swift"
       ],
       "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNExtension.build",
       "wholeModuleOptimization" : false
     },
-    "C.TrojanVPN_macOS-arm64-apple-macosx15.0-debug.module" : {
+    "C.TrojanVPNMacOSApp-arm64-apple-macosx15.0-debug.module" : {
       "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
-      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/sources",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/sources",
       "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
       "inputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ContentView_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/NetworkMonitor_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ServerConfigView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/SidebarView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNApp_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNManager_macOS.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNMacOSApp/main.swift"
         },
         {
           "kind" : "file",
@@ -481,23 +441,26 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/sources"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNmacOS.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/sources"
         }
       ],
-      "isLibrary" : true,
-      "moduleName" : "TrojanVPN_macOS",
-      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPN_macOS.swiftmodule",
+      "isLibrary" : false,
+      "moduleName" : "TrojanVPNMacOSApp",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNMacOSApp.swiftmodule",
       "objects" : [
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ContentView_macOS.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/NetworkMonitor_macOS.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ServerConfigView.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/SidebarView.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNApp_macOS.swift.o",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNManager_macOS.swift.o"
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/main.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -516,10 +479,11 @@
         "-module-cache-path",
         "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
         "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "TrojanVPNMacOSApp_main",
         "-parse-as-library",
-        "-emit-objc-header",
-        "-emit-objc-header-path",
-        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/include/TrojanVPN_macOS-Swift.h",
         "-swift-version",
         "5",
         "-plugin-path",
@@ -554,47 +518,624 @@
         "-package-name",
         "getback"
       ],
-      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/output-file-map.json",
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/output-file-map.json",
       "outputs" : [
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ContentView_macOS.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/main.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/NetworkMonitor_macOS.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ServerConfigView.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/SidebarView.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNApp_macOS.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNManager_macOS.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPN_macOS.swiftmodule"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNMacOSApp.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ContentView_macOS.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/NetworkMonitor_macOS.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ServerConfigView.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/SidebarView.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNApp_macOS.swift",
-        "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNManager_macOS.swift"
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNMacOSApp/main.swift"
       ],
-      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build",
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TrojanVPNModels-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/sources",
+      "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNModels/ServerProfile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "TrojanVPNModels",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule",
+      "objects" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/include/TrojanVPNModels-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "getback"
+      ],
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNModels/ServerProfile.swift"
+      ],
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TrojanVPNPackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/sources",
+      "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "TrojanVPNPackageTests",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/include/TrojanVPNPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "getback"
+      ],
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TrojanVPNTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/sources",
+      "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Tests/TrojanVPNTests/TrojanVPNTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "TrojanVPNTests",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNTests.swiftmodule",
+      "objects" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "getback"
+      ],
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/eyeopen/Downloads/getback/Tests/TrojanVPNTests/TrojanVPNTests.swift"
+      ],
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TrojanVPNiOS-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/sources",
+      "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ServerListView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TestViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TrojanVPNApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "TrojanVPNiOS",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNiOS.swiftmodule",
+      "objects" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/include/TrojanVPNiOS-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "getback"
+      ],
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNiOS.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ContentView.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ServerListView.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TestViewController.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TrojanVPNApp.swift"
+      ],
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.TrojanVPNmacOS-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/sources",
+      "importPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ContentView_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/NetworkMonitor_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ServerConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/SidebarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNApp_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNManager_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNmacOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNModels.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "TrojanVPNmacOS",
+      "moduleOutputPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNmacOS.swiftmodule",
+      "objects" : [
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ContentView_macOS.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/NetworkMonitor_macOS.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ServerConfigView.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/SidebarView.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNApp_macOS.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNManager_macOS.swift.o",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNmacOS.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/include/TrojanVPNmacOS-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "getback"
+      ],
+      "outputFileMapPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ContentView_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/NetworkMonitor_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ServerConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/SidebarView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNApp_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNManager_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNmacOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules/TrojanVPNmacOS.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ContentView_macOS.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/NetworkMonitor_macOS.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ServerConfigView.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/SidebarView.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNApp_macOS.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNManager_macOS.swift",
+        "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNmacOS.swift"
+      ],
+      "tempsPath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build",
       "wholeModuleOptimization" : false
     }
   },
@@ -609,17 +1150,13 @@
       "-package-name",
       "getback",
       "-c",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/Constants.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/ContentView.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/Extensions.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/KeychainManager.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/KillSwitchManager.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/NetworkMonitor.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerListView.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerProfileManager.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/TestViewController.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNApp.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNManager.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/KillSwitchManager.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/NetworkMonitor.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/ServerProfileManager.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/TrojanVPNManager.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Constants.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Extensions.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/KeychainManager.swift",
       "-I",
       "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -685,7 +1222,7 @@
       "-package-name",
       "getback",
       "-c",
-      "/Users/eyeopen/Downloads/getback/Demo/main.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNDemo/main.swift",
       "-I",
       "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -751,10 +1288,10 @@
       "-package-name",
       "getback",
       "-c",
-      "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/PacketParser.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanConnection.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanPacketTunnelProvider.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanProtocol.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/PacketParser.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanConnection.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanPacketTunnelProvider.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanProtocol.swift",
       "-I",
       "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -813,19 +1350,81 @@
       "-driver-use-frontend-path",
       "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
     ],
-    "TrojanVPN_macOS" : [
+    "TrojanVPNMacOSApp" : [
       "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
       "-module-name",
-      "TrojanVPN_macOS",
+      "TrojanVPNMacOSApp",
       "-package-name",
       "getback",
       "-c",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ContentView_macOS.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/NetworkMonitor_macOS.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ServerConfigView.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/SidebarView.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNApp_macOS.swift",
-      "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNManager_macOS.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNMacOSApp/main.swift",
+      "-I",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "TrojanVPNMacOSApp_main",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "getback",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "TrojanVPNModels" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "TrojanVPNModels",
+      "-package-name",
+      "getback",
+      "-c",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNModels/ServerProfile.swift",
       "-I",
       "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -847,7 +1446,279 @@
       "-parse-as-library",
       "-emit-objc-header",
       "-emit-objc-header-path",
-      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/include/TrojanVPN_macOS-Swift.h",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/include/TrojanVPNModels-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "getback",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "TrojanVPNPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "TrojanVPNPackageTests",
+      "-package-name",
+      "getback",
+      "-c",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/include/TrojanVPNPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "getback",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "TrojanVPNTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "TrojanVPNTests",
+      "-package-name",
+      "getback",
+      "-c",
+      "/Users/eyeopen/Downloads/getback/Tests/TrojanVPNTests/TrojanVPNTests.swift",
+      "-I",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "getback",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "TrojanVPNiOS" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "TrojanVPNiOS",
+      "-package-name",
+      "getback",
+      "-c",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ContentView.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ServerListView.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TestViewController.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TrojanVPNApp.swift",
+      "-I",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/include/TrojanVPNiOS-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "getback",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "TrojanVPNmacOS" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "TrojanVPNmacOS",
+      "-package-name",
+      "getback",
+      "-c",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ContentView_macOS.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/NetworkMonitor_macOS.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ServerConfigView.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/SidebarView.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNApp_macOS.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNManager_macOS.swift",
+      "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNmacOS.swift",
+      "-I",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/include/TrojanVPNmacOS-Swift.h",
       "-swift-version",
       "5",
       "-plugin-path",
@@ -887,24 +1758,58 @@
   },
   "targetDependencyMap" : {
     "TrojanVPNCore" : [
-
+      "TrojanVPNModels"
     ],
     "TrojanVPNDemo" : [
-      "TrojanVPN_macOS",
-      "TrojanVPNCore"
+      "TrojanVPNiOS",
+      "TrojanVPNCore",
+      "TrojanVPNModels"
     ],
     "TrojanVPNExtension" : [
+      "TrojanVPNCore",
+      "TrojanVPNModels"
+    ],
+    "TrojanVPNMacOSApp" : [
+      "TrojanVPNmacOS",
+      "TrojanVPNCore",
+      "TrojanVPNModels"
+    ],
+    "TrojanVPNModels" : [
 
     ],
-    "TrojanVPN_macOS" : [
-      "TrojanVPNCore"
+    "TrojanVPNPackageTests" : [
+      "TrojanVPNTests",
+      "TrojanVPNCore",
+      "TrojanVPNModels"
+    ],
+    "TrojanVPNTests" : [
+      "TrojanVPNCore",
+      "TrojanVPNModels"
+    ],
+    "TrojanVPNiOS" : [
+      "TrojanVPNCore",
+      "TrojanVPNModels"
+    ],
+    "TrojanVPNmacOS" : [
+      "TrojanVPNCore",
+      "TrojanVPNModels"
     ]
   },
   "testDiscoveryCommands" : {
 
   },
   "testEntryPointCommands" : {
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift" : {
+      "inputs" : [
 
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift"
+        }
+      ]
+    }
   },
   "traitConfiguration" : {
     "default" : {
@@ -921,47 +1826,31 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/Constants.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/KillSwitchManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ContentView.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/NetworkMonitor.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/Extensions.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/ServerProfileManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/KeychainManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Controllers/TrojanVPNManager.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/KillSwitchManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Constants.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/NetworkMonitor.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/Extensions.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerListView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/ServerProfileManager.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TestViewController.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNApp.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN/TrojanVPNManager.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNCore/Utilities/KeychainManager.swift"
         }
       ],
       "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/sources"
@@ -989,7 +1878,7 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/Demo/main.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNDemo/main.swift"
         }
       ],
       "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.build/sources"
@@ -1004,10 +1893,6 @@
         {
           "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ContentView.swift.o"
         },
         {
           "kind" : "file",
@@ -1027,19 +1912,7 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerListView.swift.o"
-        },
-        {
-          "kind" : "file",
           "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TestViewController.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNApp.swift.o"
         },
         {
           "kind" : "file",
@@ -1051,27 +1924,23 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ContentView_macOS.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/NetworkMonitor_macOS.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ContentView.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/ServerConfigView.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/ServerListView.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/SidebarView.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TestViewController.swift.o"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNApp_macOS.swift.o"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/TrojanVPNManager_macOS.swift.o"
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/TrojanVPNApp.swift.o"
         }
       ],
       "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNDemo.product/Objects.LinkFileList"
@@ -1085,24 +1954,38 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/PacketParser.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/PacketParser.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanConnection.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanConnection.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanPacketTunnelProvider.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanPacketTunnelProvider.swift"
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPNExtension/TrojanProtocol.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNExtension/TrojanProtocol.swift"
         }
       ],
       "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNExtension.build/sources"
     },
-    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/sources" : {
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp-entitlement.plist"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/sources" : {
       "alwaysOutOfDate" : false,
       "inputs" : [
         {
@@ -1111,30 +1994,240 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ContentView_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/NetworkMonitor_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/ServerConfigView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/SidebarView.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNApp_macOS.swift"
-        },
-        {
-          "kind" : "file",
-          "name" : "/Users/eyeopen/Downloads/getback/TrojanVPN_macOS/TrojanVPNManager_macOS.swift"
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNMacOSApp/main.swift"
         }
       ],
-      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPN_macOS.build/sources"
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/sources"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Extensions.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KeychainManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KillSwitchManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/NetworkMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ContentView_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/NetworkMonitor_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/ServerConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/SidebarView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNApp_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNManager_macOS.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/TrojanVPNmacOS.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNMacOSApp.product/Objects.LinkFileList"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNModels/ServerProfile.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/sources"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/sources"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Constants.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/Extensions.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KeychainManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/KillSwitchManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/NetworkMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/ServerProfileManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNCore.build/TrojanVPNManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNModels.build/ServerProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/TrojanVPNTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Tests/TrojanVPNTests/TrojanVPNTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNTests.build/sources"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/ServerListView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TestViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNiOS/TrojanVPNApp.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNiOS.build/sources"
+    },
+    "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ContentView_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/NetworkMonitor_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/ServerConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/SidebarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNApp_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNManager_macOS.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/eyeopen/Downloads/getback/Sources/TrojanVPNmacOS/TrojanVPNmacOS.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/sources"
     },
     "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
       "alwaysOutOfDate" : true,

@@ -1,0 +1,3 @@
+module TrojanVPNmacOS {
+    header "/Users/eyeopen/Downloads/getback/.build/arm64-apple-macosx/debug/TrojanVPNmacOS.build/include/TrojanVPNmacOS-Swift.h"
+}

@@ -4,7 +4,6 @@ import TrojanVPNCore
 
 @available(macOS 13.0, *)
 struct ServerConfigView: View {
-    @Environment(\.dismiss) private var dismiss
     @StateObject private var serverManager = ServerProfileManager.shared
     
     @State private var name = ""
@@ -17,108 +16,96 @@ struct ServerConfigView: View {
     
     @State private var showingAlert = false
     @State private var alertMessage = ""
-    @FocusState private var focusedField: Field?
     
-    enum Field: Hashable {
-        case name, serverAddress, port, password, sni
+    // Add focus state to maintain input focus
+    @FocusState private var focusedField: FocusField?
+    
+    enum FocusField {
+        case name, address, port, password, sni
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Add New Server")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
-                    Text("Configure your Trojan server connection")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+        VStack(spacing: 20) {
+            // Title
+            Text("Add New Server")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.top)
+            
+            // Simple form fields
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Server Name")
+                        .font(.headline)
+                    TextField("Enter server name", text: $name)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(height: 30)
+                        .focused($focusedField, equals: .name)
+                        .onSubmit { focusedField = .address }
                 }
                 
-                Spacer()
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Server Address")
+                        .font(.headline)
+                    TextField("server.example.com", text: $serverAddress)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(height: 30)
+                        .focused($focusedField, equals: .address)
+                        .onSubmit { focusedField = .port }
+                }
                 
-                Button("Cancel") {
-                    dismiss()
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Port")
+                            .font(.headline)
+                        TextField("443", text: $port)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 100, height: 30)
+                            .focused($focusedField, equals: .port)
+                            .onSubmit { focusedField = .password }
+                    }
+                    Spacer()
                 }
-                .keyboardShortcut(.escape)
-            }
-            .padding()
-            
-            Divider()
-            
-            // Form
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    GroupBox("Server Information") {
-                        VStack(alignment: .leading, spacing: 12) {
-                            TextField("Server Name", text: $name)
-                                .textFieldStyle(.roundedBorder)
-                                .focused($focusedField, equals: .name)
-                                .onSubmit { focusedField = .serverAddress }
-                            
-                            TextField("Server Address", text: $serverAddress)
-                                .textFieldStyle(.roundedBorder)
-                                .autocorrectionDisabled()
-                                .focused($focusedField, equals: .serverAddress)
-                                .onSubmit { focusedField = .port }
-                            
-                            HStack {
-                                TextField("Port", text: $port)
-                                    .textFieldStyle(.roundedBorder)
-                                    .frame(maxWidth: 100)
-                                    .focused($focusedField, equals: .port)
-                                    .onSubmit { focusedField = .password }
-                                
-                                Spacer()
-                            }
-                        }
-                        .padding()
-                    }
-                    
-                    GroupBox("Authentication") {
-                        VStack(alignment: .leading, spacing: 12) {
-                            SecureField("Password", text: $password)
-                                .textFieldStyle(.roundedBorder)
-                                .focused($focusedField, equals: .password)
-                                .onSubmit { focusedField = .sni }
-                        }
-                        .padding()
-                    }
-                    
-                    GroupBox("Advanced Settings") {
-                        VStack(alignment: .leading, spacing: 12) {
-                            TextField("SNI (Optional)", text: $sni)
-                                .textFieldStyle(.roundedBorder)
-                                .autocorrectionDisabled()
-                                .focused($focusedField, equals: .sni)
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                Toggle("Set as default server", isOn: $makeDefault)
-                                Toggle("Add to favorites", isOn: $makeFavorite)
-                            }
-                        }
-                        .padding()
-                    }
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Password")
+                        .font(.headline)
+                    SecureField("Enter password", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(height: 30)
+                        .focused($focusedField, equals: .password)
+                        .onSubmit { focusedField = .sni }
                 }
-                .padding()
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("SNI (Optional)")
+                        .font(.headline)
+                    TextField("server.example.com", text: $sni)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(height: 30)
+                        .focused($focusedField, equals: .sni)
+                }
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Toggle("Set as default server", isOn: $makeDefault)
+                    Toggle("Add to favorites", isOn: $makeFavorite)
+                }
             }
+            .padding(.horizontal)
             
             Spacer()
             
-            // Footer
-            HStack {
+            // Bottom buttons
+            HStack(spacing: 16) {
                 Button("Test Connection") {
                     testConnection()
                 }
                 .disabled(!isFormValid)
                 
-                Spacer()
-                
                 Button("Cancel") {
-                    dismiss()
+                    closeWindow()
                 }
+                .keyboardShortcut(.escape)
                 
                 Button("Add Server") {
                     addServer()
@@ -127,19 +114,22 @@ struct ServerConfigView: View {
                 .keyboardShortcut(.return)
                 .buttonStyle(.borderedProminent)
             }
-            .padding()
+            .padding(.bottom)
         }
-        .frame(width: 500, height: 600)
-        .alert("Error", isPresented: $showingAlert) {
-            Button("OK", role: .cancel) { }
+        .frame(width: 500, height: 500)
+        .alert("Status", isPresented: $showingAlert) {
+            Button("OK") { }
         } message: {
             Text(alertMessage)
         }
         .onAppear {
-            // Set initial focus to the first field
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // Set focus to first field when view appears
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 focusedField = .name
             }
+        }
+        .onTapGesture {
+            // Prevent losing focus when tapping elsewhere in the view
         }
     }
     
@@ -147,7 +137,9 @@ struct ServerConfigView: View {
         !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !serverAddress.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !password.isEmpty &&
-        Int(port) != nil
+        Int(port) != nil &&
+        (Int(port) ?? 0) > 0 &&
+        (Int(port) ?? 0) <= 65535
     }
     
     private func testConnection() {
@@ -203,7 +195,14 @@ struct ServerConfigView: View {
             serverManager.setDefaultProfile(profile)
         }
         
-        dismiss()
+        closeWindow()
+    }
+    
+    private func closeWindow() {
+        // Find and close the current window
+        if let window = NSApp.keyWindow {
+            window.close()
+        }
     }
 }
 
@@ -307,6 +306,39 @@ struct SettingsView: View {
             }
         }
         .frame(width: 500, height: 400)
+    }
+}
+
+@available(macOS 13.0, *)
+struct SimpleInputTest: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var testText = ""
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Simple Input Test")
+                .font(.title)
+            
+            TextField("Type here to test", text: $testText)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 300, height: 40)
+            
+            Text("Current text: '\(testText)'")
+                .foregroundColor(.secondary)
+            
+            HStack {
+                Button("Cancel") {
+                    dismiss()
+                }
+                Button("OK") {
+                    print("Text entered: \(testText)")
+                    dismiss()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
+        .padding(40)
+        .frame(width: 400, height: 200)
     }
 }
 
