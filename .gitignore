@@ -1,0 +1,7 @@
+# Build artifacts
+.build/
+
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+.DS_Store
