@@ -44,13 +44,80 @@ class TrojanVPNManager_macOS: ObservableObject {
     }
     
     private func loadManager() {
-        NEVPNManager.shared().loadFromPreferences { [weak self] error in
+        // Clear any existing broken configuration first
+        self.clearBrokenConfiguration()
+        
+        // First request VPN permissions
+        VPNPermissionManager.shared.requestVPNPermission { [weak self] granted, error in
+            if granted {
+                NEVPNManager.shared().loadFromPreferences { [weak self] error in
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            print("Failed to load VPN preferences: \(error)")
+                            // Try to initialize with default configuration
+                            self?.initializeWithDefaultConfiguration()
+                        } else {
+                            self?.manager = NEVPNManager.shared()
+                            self?.updateConnectionStatus()
+                        }
+                    }
+                }
+            } else {
+                print("VPN permission denied: \(error?.localizedDescription ?? "Unknown error")")
+                DispatchQueue.main.async {
+                    self?.connectionStatus = "Permission Required"
+                }
+            }
+        }
+    }
+    
+    private func clearBrokenConfiguration() {
+        NEVPNManager.shared().loadFromPreferences { error in
+            if error == nil {
+                let manager = NEVPNManager.shared()
+                
+                // Remove broken configuration
+                manager.protocolConfiguration = nil
+                manager.localizedDescription = nil
+                manager.isEnabled = false
+                
+                manager.removeFromPreferences { error in
+                    if let error = error {
+                        print("Failed to remove broken configuration: \(error)")
+                    } else {
+                        print("✅ Cleared broken VPN configuration")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func initializeWithDefaultConfiguration() {
+        let manager = NEVPNManager.shared()
+        
+        // Create a basic valid configuration
+        let providerProtocol = NETunnelProviderProtocol()
+        providerProtocol.providerBundleIdentifier = "com.trojanvpn.TrojanVPNExtension"
+        providerProtocol.serverAddress = "not-configured"
+        
+        providerProtocol.providerConfiguration = [
+            "serverAddress": "not-configured",
+            "port": 443,
+            "password": "not-configured"
+        ]
+        
+        manager.protocolConfiguration = providerProtocol
+        manager.localizedDescription = "TrojanVPN (Not Configured)"
+        manager.isEnabled = false
+        
+        manager.saveToPreferences { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error {
-                    print("Failed to load VPN preferences: \(error)")
+                    print("Failed to save default configuration: \(error)")
+                    self?.connectionStatus = "Configuration Error"
                 } else {
-                    self?.manager = NEVPNManager.shared()
-                    self?.updateConnectionStatus()
+                    self?.manager = manager
+                    self?.connectionStatus = "Not Configured"
                 }
             }
         }
@@ -235,23 +302,26 @@ class TrojanVPNManager_macOS: ObservableObject {
             
             let manager = NEVPNManager.shared()
             
-            // For macOS, we'll use IKEv2 instead of packet tunnel for better compatibility
+            // Use IKEv2 for development (Network Extension requires code signing)
             let ikev2Protocol = NEVPNProtocolIKEv2()
             ikev2Protocol.serverAddress = profile.serverAddress
             ikev2Protocol.remoteIdentifier = profile.serverAddress
-            ikev2Protocol.localIdentifier = "TrojanVPN"
+            ikev2Protocol.localIdentifier = "TrojanVPN-\(profile.name)"
             
-            // Use certificate authentication (in production, you'd configure proper certificates)
+            // Configure for development testing
             ikev2Protocol.authenticationMethod = .sharedSecret
             ikev2Protocol.sharedSecretReference = self?.createSharedSecretReference(profile.password)
             
-            // Configure dead peer detection
+            // Disable certificate validation for testing
+            ikev2Protocol.useExtendedAuthentication = false
+            ikev2Protocol.enableRevocationCheck = false
+            ikev2Protocol.strictRevocationCheck = false
+            
+            // Configure connection settings
             ikev2Protocol.deadPeerDetectionRate = .medium
             ikev2Protocol.disableMOBIKE = false
             ikev2Protocol.disableRedirect = false
             ikev2Protocol.enablePFS = true
-            ikev2Protocol.enableRevocationCheck = false
-            ikev2Protocol.strictRevocationCheck = false
             
             manager.protocolConfiguration = ikev2Protocol
             manager.localizedDescription = "Trojan VPN - \(profile.name)"
@@ -270,6 +340,29 @@ class TrojanVPNManager_macOS: ObservableObject {
                 }
             }
         }
+    }
+    
+    private func createPasswordReference(_ password: String) -> Data? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: "TrojanVPN",
+            kSecAttrAccount as String: "UserPassword",
+            kSecValueData as String: password.data(using: .utf8) ?? Data(),
+            kSecReturnPersistentRef as String: true
+        ]
+        
+        // Delete existing
+        SecItemDelete(query as CFDictionary)
+        
+        // Add new
+        var result: AnyObject?
+        let status = SecItemAdd(query as CFDictionary, &result)
+        
+        if status == errSecSuccess {
+            return result as? Data
+        }
+        
+        return nil
     }
     
     private func createSharedSecretReference(_ password: String) -> Data? {

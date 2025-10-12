@@ -137,10 +137,11 @@ public class ServerProfileManager: ObservableObject {
     
     private func addDefaultServer() {
         let defaultServer = ServerProfile(
-            name: "China VPN",
+            name: "Chinida Space Server",
             serverAddress: "chinida.space",
             port: 443,
             password: "fuyilee",
+            sni: "chinida.space",
             isDefault: true
         )
         

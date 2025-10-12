@@ -224,7 +224,7 @@ public class TrojanVPNManager: ObservableObject {
             
             // Configure packet tunnel
             let providerProtocol = NETunnelProviderProtocol()
-            providerProtocol.providerBundleIdentifier = "com.yourcompany.trojanvpn.extension"
+            providerProtocol.providerBundleIdentifier = "com.trojanvpn.TrojanVPNExtension"
             providerProtocol.serverAddress = profile.serverAddress
             
             // Store configuration in providerConfiguration

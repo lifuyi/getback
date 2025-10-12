@@ -9,8 +9,6 @@ public struct ContentView_macOS: View {
     @StateObject private var vpnManager = TrojanVPNManager_macOS.shared
     @StateObject private var serverManager = ServerProfileManager.shared
     @State private var selectedProfile: ServerProfile?
-    @State private var showingServerConfig = false
-    @State private var serverConfigWindow: NSWindow?
     @State private var showingAlert = false
     @State private var alertMessage = ""
     
@@ -46,14 +44,6 @@ public struct ContentView_macOS: View {
         }
         .navigationTitle("Trojan VPN")
         .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Button(action: {
-                    openServerConfigWindow()
-                }) {
-                    Image(systemName: "plus")
-                }
-            }
-            
             ToolbarItem(placement: .primaryAction) {
                 HStack {
                     Button(vpnManager.isConnected ? "Disconnect" : "Connect") {
@@ -85,30 +75,6 @@ public struct ContentView_macOS: View {
         }
     }
     
-    private func openServerConfigWindow() {
-        // Close existing window if open
-        serverConfigWindow?.close()
-        
-        // Create new window with ServerConfigView
-        let contentView = ServerConfigView()
-        let hostingController = NSHostingController(rootView: contentView)
-        
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 500, height: 500),
-            styleMask: [.titled, .closable, .resizable],
-            backing: .buffered,
-            defer: false
-        )
-        
-        window.title = "Add Server"
-        window.contentViewController = hostingController
-        window.center()
-        window.makeKeyAndOrderFront(nil)
-        window.level = .floating
-        
-        // Store reference to window
-        serverConfigWindow = window
-    }
     
     private func toggleConnection() {
         if vpnManager.isConnected {

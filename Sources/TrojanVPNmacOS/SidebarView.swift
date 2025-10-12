@@ -7,7 +7,6 @@ import TrojanVPNCore
 struct SidebarView: View {
     @StateObject private var serverManager = ServerProfileManager.shared
     @Binding var selectedProfile: ServerProfile?
-    @State private var showingAddServer = false
     
     var body: some View {
         VStack {
@@ -19,9 +18,6 @@ struct SidebarView: View {
                 
                 Spacer()
                 
-                Button(action: { showingAddServer = true }) {
-                    Image(systemName: "plus")
-                }
             }
             .padding(.horizontal)
             .padding(.top)
@@ -73,9 +69,6 @@ struct SidebarView: View {
             .font(.caption)
         }
         .frame(minWidth: 200)
-        .sheet(isPresented: $showingAddServer) {
-            ServerConfigView()
-        }
         .onAppear {
             // Select default profile if none selected
             if selectedProfile == nil {

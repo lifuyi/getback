@@ -24,8 +24,5 @@ struct TrojanVPNApp_macOS: App {
             }
         }
         
-        Settings {
-            SettingsView()
-        }
     }
 }

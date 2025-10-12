@@ -1,15 +1,14 @@
-#if os(iOS)
 import NetworkExtension
 import Foundation
 import Network
 
-class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
+public class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
     
     private var trojanConnection: TrojanConnection?
     private var pendingStartCompletion: ((Error?) -> Void)?
     private var pendingStopCompletion: (() -> Void)?
     
-    override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+    public override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
         pendingStartCompletion = completionHandler
         
         guard let protocolConfig = protocolConfiguration as? NETunnelProviderProtocol,
@@ -59,7 +58,7 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
         }
     }
     
-    override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
+    public override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         pendingStopCompletion = completionHandler
         
         trojanConnection?.disconnect()
@@ -68,7 +67,7 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
         completionHandler()
     }
     
-    override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
+    public override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
         // Handle messages from the main app if needed
         completionHandler?(nil)
     }
@@ -114,14 +113,13 @@ class TrojanPacketTunnelProvider: NEPacketTunnelProvider {
 }
 
 extension TrojanPacketTunnelProvider: TrojanConnectionDelegate {
-    func trojanConnection(_ connection: TrojanConnection, didReceivePacket packet: Data, protocolFamily: NSNumber) {
+    public func trojanConnection(_ connection: TrojanConnection, didReceivePacket packet: Data, protocolFamily: NSNumber) {
         packetFlow.writePackets([packet], withProtocols: [protocolFamily])
     }
     
-    func trojanConnection(_ connection: TrojanConnection, didDisconnectWithError error: Error?) {
+    public func trojanConnection(_ connection: TrojanConnection, didDisconnectWithError error: Error?) {
         if let error = error {
             cancelTunnelWithError(error)
         }
     }
 }
-#endif
